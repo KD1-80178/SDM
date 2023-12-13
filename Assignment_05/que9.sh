@@ -1,16 +1,14 @@
 #!/bin/bash
 
-echo "Enter the number :"
+echo "Enter a number"
 read num
 
 fact=1
-n = 1
 
-until [$n -le $num]
+while [ $num -gt 1 ]
 do
-	fact=`expr $fact [*] $n`
-	n=`expr $n + 1`
+  fact=$((fact * num))  #fact = fact * num
+  num=$((num - 1))      #num = num - 1
 done
-echo "Factorial : "
-echo $fact
 
+echo $fact
